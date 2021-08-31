@@ -1,4 +1,4 @@
-package jpmc.team48.MetorshipApplication.objects;
+package jpmc.team48.MetorshipApplication.objects.people;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,6 +1,6 @@
 package jpmc.team48.MetorshipApplication.controller;
 
-import jpmc.team48.MetorshipApplication.objects.Mentor;
+import jpmc.team48.MetorshipApplication.objects.people.Mentor;
 import jpmc.team48.MetorshipApplication.service.MentorshipService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -37,7 +37,7 @@ public class MentorshipController {
 
     @PutMapping("{id}")
     public Optional<Mentor> updateById(@RequestBody Mentor mentor, @PathVariable Long id){
-            if(mentor.getId() == id) {
+            if(mentor.getId().equals(id)) {
                 mentorshipService.save(mentor);
             }
 
