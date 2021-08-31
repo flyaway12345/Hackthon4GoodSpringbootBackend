@@ -15,7 +15,7 @@ public class MentorshipController {
 
 
         @GetMapping("{id}")
-        public Optional<Mentor> findById(Long id){
+        public Optional<Mentor> findById(@PathVariable Long id){
             return mentorshipService.findById(id);
         }
 
@@ -25,18 +25,18 @@ public class MentorshipController {
         }
 
         @PostMapping("")
-        public Object save(Mentor mentor){
+        public Object save(@RequestBody Mentor mentor){
             return mentorshipService.save(mentor);
         }
 
     @DeleteMapping("{id}")
-    public Optional<Mentor> deleteById(Long id){
+    public Optional<Mentor> deleteById(@PathVariable Long id){
         mentorshipService.deleteById(id);
         return null;
     }
 
     @PutMapping("{id}")
-    public Optional<Mentor> update(Mentor mentor, Long id){
+    public Optional<Mentor> updateById(@RequestBody Mentor mentor, @PathVariable Long id){
             if(mentor.getId() == id) {
                 mentorshipService.save(mentor);
             }
